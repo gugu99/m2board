@@ -13,22 +13,14 @@
 	</div>
 	<form action="${pageContext.request.contextPath }/addBoard" method="post">
 		<table border="1">
-			<thead>
 				<tr>
 					<th>제목</th>
-					<th>작성자</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
 					<td><input type="text" name="title"/></td>
-					<td><input type="text" name="id"/></td>
 				</tr>
 				<tr>
 					<th>내용</th>
-					<td colspan="5"><textarea name="content" rows="5" cols="10"></textarea> </td>
+					<td colspan="5"><textarea name="content" rows="10" cols="20"></textarea> </td>
 				</tr>
-			</tbody>
 		</table>
 		<button type="submit">글쓰기</button>
 	</form>
