@@ -12,7 +12,7 @@ public class NiceDao implements INiceDao{
 	// 좋아요 수 가져오기
 	@Override
 	public int selectNiceCount(Connection conn, int boardNo) throws SQLException {
-		System.out.println("--------------------BoardDao.selectNice()");
+		System.out.println("--------------------NiceDao.selectNiceCount()");
 		int niceCnt = 0;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
@@ -45,7 +45,7 @@ public class NiceDao implements INiceDao{
 	// 좋아요 올리기
 	@Override
 	public int insertNice(Connection conn, Nice paramNice) throws SQLException {
-		System.out.println("--------------------BoardDao.updateNice()");
+		System.out.println("--------------------NiceDao.insertNice()");
 		int result = 0;
 		PreparedStatement stmt = null;
 		String sql = "INSERT INTO nice (id, board_no, create_date) VALUES (?,?,NOW())";

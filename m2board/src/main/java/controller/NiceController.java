@@ -23,7 +23,7 @@ public class NiceController extends HttpServlet {
 	private INiceService niceService;
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("1.-------------niceController");
+		System.out.println("1.---------------niceController");
 		HttpSession session = request.getSession();
 		
 		System.out.println("session --- " + session.getAttribute("loginMember"));
@@ -45,9 +45,9 @@ public class NiceController extends HttpServlet {
 		niceService = new NiceService();
 		boolean add = niceService.addNice(paramNice);
 		
-		System.out.println("3.-----------add --- " + add);
+		System.out.println("3.------------add --- " + add);
 		
-		if (!add) {
+		if (!add) { // 리턴값이 false일때
 			System.out.println("좋아요 실패!");
 			return;
 		}
@@ -61,7 +61,7 @@ public class NiceController extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		
 		Gson gson = new Gson();
-		String jsonStr = gson.toJson(""+niceCnt);
+		String jsonStr = gson.toJson(niceCnt);
 		
 		System.out.println("jsonStr --- " + jsonStr);
 		

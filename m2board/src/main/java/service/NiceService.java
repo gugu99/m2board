@@ -18,6 +18,7 @@ public class NiceService implements INiceService{
 	public boolean addNice(Nice paramNice) {
 		Connection conn = null;
 		dbUtil = new DBUtil();
+		int result = -999;
 		
 		try {
 			conn = dbUtil.getConnection();
