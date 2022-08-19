@@ -10,6 +10,7 @@
 	<h1>게시판 목록</h1>
 	<div>
 		<a href="${pageContext.request.contextPath }/addBoard">글쓰기</a>
+		<a href="${pageContext.request.contextPath }/index">인덱스</a>
 	</div>
 	<table border="1">
 		<thead>
