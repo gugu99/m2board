@@ -41,10 +41,14 @@ public class SignUpController extends HttpServlet {
 		// 파라미터
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
+		String addr = request.getParameter("addr"); // 우편번호 주소
+		String detailAddress = request.getParameter("detailAddress"); // 상세주소
+		String address = addr + " " + detailAddress; // 전체 주소
 		
 		Member paramMember = new Member();
 		paramMember.setId(id);
 		paramMember.setPw(pw);
+		paramMember.setAddress(address);
 		
 		memberService = new MemberService();
 		boolean add = memberService.addMember(paramMember);

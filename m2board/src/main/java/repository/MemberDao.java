@@ -16,12 +16,13 @@ public class MemberDao implements IMemberDao{
 		
 		int result = 0;
 		PreparedStatement stmt = null;
-		String sql = "INSERT INTO member (id, pw) VALUES (?, PASSWORD(?))";
+		String sql = "INSERT INTO member (id, pw, address) VALUES (?, PASSWORD(?), ?)";
 		
 		try {
 			stmt = conn.prepareStatement(sql);
 			stmt.setString(1, paramMember.getId());
 			stmt.setString(2, paramMember.getPw());
+			stmt.setString(3, paramMember.getAddress());
 			
 			System.out.println("stmt --- " + stmt);
 			
